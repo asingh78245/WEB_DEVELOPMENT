@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Upcoming Events</h2>
+
+{% for event in events %}
+<div class="card">
+    <h3>{{ event.name }}</h3>
+    <p>📅 {{ event.date }}</p>
+    <p>📍 {{ event.venue }}</p>
+    <a href="/register"><button class="btn">Register</button></a>
+</div>
+{% endfor %}
+
+{% endblock %}
