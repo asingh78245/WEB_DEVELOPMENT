@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="start-box" id="startBox">
+            <h1 class="main-title">Interactive Quiz</h1>
+            <p class="intro">
+                Select a quiz category and start playing. Each question has a timer ⏳.
+            </p>
+
+            <div class="category-grid">
+                <button class="cat-btn" data-category="html">HTML Quiz</button>
+                <button class="cat-btn" data-category="css">CSS Quiz</button>
+                <button class="cat-btn" data-category="js">JavaScript Quiz</button>
+            </div>
+
+            <button class="btn start-btn" id="startBtn" disabled>
+        Start Quiz
+      </button>
+
+            <p class="note" id="selectedCategoryText">No category selected</p>
+        </section>
+
+
+        <section class="quiz-box hidden" id="quizBox">
+
+            <div class="top-bar">
+                <p class="badge" id="categoryBadge">Category</p>
+
+                <div class="timer-box">
+                    <span>⏳</span>
+                    <span id="timerText">15</span>s
+                </div>
+            </div>
+
+            <div class="progress-wrap">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <p class="progress-info" id="progressText">Question 1 of 5</p>
+
+            <h2 id="questionText">Question will appear here</h2>
+
+            <div class="options" id="optionsBox"></div>
+
+            <div class="btn-area">
+                <button id="nextBtn" class="btn" disabled>Next</button>
+            </div>
+
+        </section>
+
+        <section class="result-box hidden" id="resultBox">
+            <h2>Your Result</h2>
+
+            <p class="score" id="scoreText">Score: 0/0</p>
+            <p class="message" id="resultMessage">Message here</p>
+
+            <div class="result-actions">
+                <button id="restartBtn" class="btn">Restart</button>
+                <button id="backBtn" class="btn secondary">Change Category</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
