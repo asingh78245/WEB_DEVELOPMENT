@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+
+.container {
+    max-width: 520px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.input-area input,
+.input-area select {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #f2f4f8;
+    outline: none;
+}
+
+.input-area button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: #5f72ff;
+    color: white;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background: #4c5cff;
+}
+
+#searchBox {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #f2f4f8;
+    margin-bottom: 15px;
+}
+
+.filters {
+    margin-bottom: 18px;
+}
+
+.filters button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    background: #eef1f7;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background: #5f72ff;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.done span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.high span {
+    color: #ff4d6d;
+}
+
+.medium span {
+    color: #ff9f1c;
+}
+
+.low span {
+    color: #2ec4b6;
+}
+
+.overdue {
+    background: #ffeaea;
+    border-left: 4px solid red;
+}
+
+li button {
+    border: none;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+li button:nth-child(2) {
+    background: #ffd166;
+}
+
+li button:nth-child(3) {
+    background: #ef476f;
+    color: white;
+}
+
+#counter {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+}
