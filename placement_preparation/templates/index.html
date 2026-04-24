@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlacePro — Placement Preparation Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="bg-grid"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="brand-icon">⚡</span>
+            <span class="brand-name">PlacePro</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
+            <li><a href="#" class="nav-link" data-section="quiz">Quiz</a></li>
+            <li><a href="#" class="nav-link" data-section="roadmap">Roadmap</a></li>
+            <li><a href="#" class="nav-link" data-section="tips">Tips</a></li>
+            <li><a href="#" class="nav-link" data-section="resources">Resources</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- HOME SECTION -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-badge">🚀 Your placement journey starts here</div>
+                <h1 class="hero-title">
+                    Crack Your Dream<br>
+                    <span class="gradient-text">Placement</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Master aptitude, technical rounds, and HR interviews with structured practice, curated resources, and expert tips.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn-primary" onclick="navigateTo('quiz')">Start Practice →</button>
+                    <button class="btn-ghost" onclick="navigateTo('roadmap')">View Roadmap</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num">500+</span>
+                        <span class="stat-label">Practice Questions</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">3</span>
+                        <span class="stat-label">Quiz Categories</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">Free Access</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="features-grid">
+                <div class="feature-card" onclick="navigateTo('quiz')">
+                    <div class="feature-icon">🧮</div>
+                    <h3>Aptitude Tests</h3>
+                    <p>Quantitative, Logical & Verbal reasoning with detailed explanations</p>
+                    <span class="feature-arrow">→</span>
+                </div>
+                <div class="feature-card" onclick="navigateTo('quiz')">
+                    <div class="feature-icon">💻</div>
+                    <h3>Technical MCQs</h3>
+                    <p>DSA, OOP, DBMS, OS, Networks — all core CS subjects covered</p>
+                    <span class="feature-arrow">→</span>
+                </div>
+                <div class="feature-card" onclick="navigateTo('roadmap')">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Study Roadmap</h3>
+                    <p>Structured week-by-week plan to ace campus placements</p>
+                    <span class="feature-arrow">→</span>
+                </div>
+                <div class="feature-card" onclick="navigateTo('tips')">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Interview Tips</h3>
+                    <p>HR interview strategies, body language, and do's & don'ts</p>
+                    <span class="feature-arrow">→</span>
+                </div>
+                <div class="feature-card" onclick="navigateTo('resources')">
+                    <div class="feature-icon">📚</div>
+                    <h3>Resources</h3>
+                    <p>Curated books, platforms, YouTube channels and cheat sheets</p>
+                    <span class="feature-arrow">→</span>
+                </div>
+                <div class="feature-card" onclick="navigateTo('quiz')">
+                    <div class="feature-icon">📊</div>
+                    <h3>Track Progress</h3>
+                    <p>Instant scores and detailed answer breakdowns after every quiz</p>
+                    <span class="feature-arrow">→</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Practice <span class="gradient-text">Quiz</span></h2>
+                <p class="section-sub">Test yourself across three key placement domains</p>
+            </div>
+
+            <!-- Category Selector -->
+            <div id="quiz-home">
+                <div class="quiz-categories">
+                    <div class="quiz-cat-card" data-cat="aptitude">
+                        <div class="cat-emoji">🧮</div>
+                        <h3>Aptitude</h3>
+                        <p>Quant, Logic & Reasoning</p>
+                        <span class="cat-count">5 Questions</span>
+                    </div>
+                    <div class="quiz-cat-card" data-cat="technical">
+                        <div class="cat-emoji">💻</div>
+                        <h3>Technical</h3>
+                        <p>DSA, CS Fundamentals</p>
+                        <span class="cat-count">5 Questions</span>
+                    </div>
+                    <div class="quiz-cat-card" data-cat="verbal">
+                        <div class="cat-emoji">📖</div>
+                        <h3>Verbal</h3>
+                        <p>Grammar, Vocabulary</p>
+                        <span class="cat-count">5 Questions</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Interface -->
+            <div id="quiz-interface" class="hidden">
+                <div class="quiz-header-bar">
+                    <button class="btn-back" id="back-to-categories">← Categories</button>
+                    <div class="quiz-progress-info">
+                        <span id="quiz-category-label"></span>
+                        <span id="question-counter">Q 1/5</span>
+                    </div>
+                    <div class="timer-box">
+                        <span>⏱</span>
+                        <span id="timer">05:00</span>
+                    </div>
+                </div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar" id="quiz-progress-bar"></div>
+                </div>
+                <div class="question-card">
+                    <div class="question-number" id="q-number">Question 1</div>
+                    <div class="question-text" id="q-text"></div>
+                    <div class="options-grid" id="options-container"></div>
+                    <div class="quiz-nav">
+                        <button class="btn-nav" id="prev-btn" disabled>← Prev</button>
+                        <button class="btn-primary" id="next-btn">Next →</button>
+                        <button class="btn-primary hidden" id="submit-btn">Submit Quiz ✓</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div id="quiz-results" class="hidden">
+                <div class="results-card">
+                    <div class="results-score-circle">
+                        <span id="score-percentage">0%</span>
+                    </div>
+                    <h2 id="results-title">Quiz Complete!</h2>
+                    <p id="results-message"></p>
+                    <div class="results-stats">
+                        <div class="res-stat correct">
+                            <span id="correct-count">0</span>
+                            <label>Correct</label>
+                        </div>
+                        <div class="res-stat wrong">
+                            <span id="wrong-count">0</span>
+                            <label>Wrong</label>
+                        </div>
+                        <div class="res-stat total">
+                            <span id="total-count">0</span>
+                            <label>Total</label>
+                        </div>
+                    </div>
+                    <div id="answers-review"></div>
+                    <button class="btn-primary" onclick="resetQuiz()">Try Again →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROADMAP SECTION -->
+        <section id="roadmap" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Study <span class="gradient-text">Roadmap</span></h2>
+                <p class="section-sub">Follow this structured path to placement success</p>
+            </div>
+            <div id="roadmap-container" class="roadmap-grid"></div>
+        </section>
+
+        <!-- TIPS SECTION -->
+        <section id="tips" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Interview <span class="gradient-text">Tips</span></h2>
+                <p class="section-sub">Expert advice to ace your placement interviews</p>
+            </div>
+            <div id="tips-container" class="tips-grid"></div>
+
+            <!-- HR Questions -->
+            <div class="section-header" style="margin-top:4rem">
+                <h2 class="section-title">Common <span class="gradient-text">HR Questions</span></h2>
+            </div>
+            <div class="hr-questions">
+                <div class="hr-q" onclick="toggleAnswer(this)">
+                    <div class="hr-q-header">
+                        <span>Tell me about yourself.</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="hr-q-answer">
+                        Start with your educational background, mention 1-2 key projects or achievements, state your technical skills, and end with why you're excited about this role. Keep it under 2 minutes. Practice until it sounds natural, not rehearsed.
+                    </div>
+                </div>
+                <div class="hr-q" onclick="toggleAnswer(this)">
+                    <div class="hr-q-header">
+                        <span>Why do you want to join our company?</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="hr-q-answer">
+                        Research the company beforehand! Mention specific things: their products, mission, culture, growth, or a recent achievement. Connect it to your own goals. Never say "for money" or "for job security."
+                    </div>
+                </div>
+                <div class="hr-q" onclick="toggleAnswer(this)">
+                    <div class="hr-q-header">
+                        <span>What are your strengths and weaknesses?</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="hr-q-answer">
+                        Strengths: Pick 2-3 relevant to the role with examples. Weaknesses: Choose a real but not critical flaw, and always show what you're doing to improve it. Example: "I sometimes overthink, so I've started using the 80/20 rule to decide faster."
+                    </div>
+                </div>
+                <div class="hr-q" onclick="toggleAnswer(this)">
+                    <div class="hr-q-header">
+                        <span>Where do you see yourself in 5 years?</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="hr-q-answer">
+                        Show ambition aligned with the company's growth. "I see myself growing into a senior technical role, contributing to significant product decisions, and mentoring junior developers." Don't mention competitor companies or unrelated fields.
+                    </div>
+                </div>
+                <div class="hr-q" onclick="toggleAnswer(this)">
+                    <div class="hr-q-header">
+                        <span>Why should we hire you?</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="hr-q-answer">
+                        This is your sales pitch! Highlight 3 things: your relevant technical skills, a proven achievement (with numbers if possible), and your eagerness to contribute to this specific team. Be confident but not arrogant.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESOURCES SECTION -->
+        <section id="resources" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Curated <span class="gradient-text">Resources</span></h2>
+                <p class="section-sub">The best tools, platforms, and books for placement prep</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-group">
+                    <h3>🌐 Practice Platforms</h3>
+                    <ul>
+                        <li><a href="https://leetcode.com" target="_blank">LeetCode</a> — DSA Problems</li>
+                        <li><a href="https://www.geeksforgeeks.org" target="_blank">GeeksforGeeks</a> — Complete CS Theory</li>
+                        <li><a href="https://www.hackerrank.com" target="_blank">HackerRank</a> — Aptitude + Coding</li>
+                        <li><a href="https://www.interviewbit.com" target="_blank">InterviewBit</a> — Curated Interview Prep</li>
+                        <li><a href="https://codeforces.com" target="_blank">Codeforces</a> — Competitive Programming</li>
+                    </ul>
+                </div>
+                <div class="resource-group">
+                    <h3>📗 Must-Read Books</h3>
+                    <ul>
+                        <li>Cracking the Coding Interview — Gayle McDowell</li>
+                        <li>Introduction to Algorithms — CLRS</li>
+                        <li>System Design Interview — Alex Xu</li>
+                        <li>The Pragmatic Programmer</li>
+                        <li>Clean Code — Robert C. Martin</li>
+                    </ul>
+                </div>
+                <div class="resource-group">
+                    <h3>▶️ YouTube Channels</h3>
+                    <ul>
+                        <li><a href="https://youtube.com/@takeUforward" target="_blank">TakeUForward</a> — Striver's DSA</li>
+                        <li><a href="https://youtube.com/@ApnaCollegeOfficial" target="_blank">Apna College</a> — CS Fundamentals</li>
+                        <li><a href="https://youtube.com/@NeetCode" target="_blank">NeetCode</a> — LeetCode Explanations</li>
+                        <li><a href="https://youtube.com/@BackToBackSWE" target="_blank">Back to Back SWE</a> — Interview Patterns</li>
+                    </ul>
+                </div>
+                <div class="resource-group">
+                    <h3>📋 Quick Cheat Sheets</h3>
+                    <ul>
+                        <li>Big-O Complexity Cheat Sheet</li>
+                        <li>SQL Joins Cheat Sheet</li>
+                        <li>OOP Concepts Summary</li>
+                        <li>OS Process & Thread Notes</li>
+                        <li>Computer Networks OSI Model</li>
+                    </ul>
+                </div>
+                <div class="resource-group">
+                    <h3>🧪 Mock Interview Prep</h3>
+                    <ul>
+                        <li><a href="https://www.pramp.com" target="_blank">Pramp</a> — Peer Mock Interviews</li>
+                        <li><a href="https://interviewing.io" target="_blank">Interviewing.io</a> — Anonymous Practice</li>
+                        <li>Record yourself answering HR Qs</li>
+                        <li>Do mock GDs with friends</li>
+                    </ul>
+                </div>
+                <div class="resource-group">
+                    <h3>🧩 Resume Tips</h3>
+                    <ul>
+                        <li>Use action verbs: Built, Designed, Optimized</li>
+                        <li>Quantify achievements (e.g., 40% faster)</li>
+                        <li>Keep it 1 page for freshers</li>
+                        <li>Include GitHub & LinkedIn links</li>
+                        <li>Tailor resume to each company's JD</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>⚡ PlacePro — Built for students, by students. Good luck! 🍀</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
