@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShopEasy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <span class="brand">🛒 ShopEasy</span>
+  <button class="cart-btn" onclick="toggleCart()">
+    Cart <span id="cart-count">0</span>
+  </button>
+</nav>
+
+<section class="hero">
+  <h1>Fresh Deals, Every Day</h1>
+  <p>Quality products at unbeatable prices.</p>
+</section>
+
+<section class="products-section">
+  <h2>Our Products</h2>
+  <div class="products" id="products"></div>
+</section>
+
+<div class="cart-overlay" id="overlay" onclick="toggleCart()"></div>
+<aside class="cart" id="cart">
+  <h3>Your Cart</h3>
+  <div id="cart-items"><p class="empty-msg">No items yet.</p></div>
+  <div class="cart-total">Total: ₹<span id="total">0</span></div>
+  <button class="checkout-btn" onclick="checkout()">Checkout</button>
+</aside>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3>Checkout</h3>
+    <label>Name</label>
+    <input id="cust-name" placeholder="Your name">
+    <label>Address</label>
+    <input id="cust-addr" placeholder="Delivery address">
+    <button onclick="placeOrder()">Place Order</button>
+    <button class="cancel" onclick="closeModal()">Cancel</button>
+    <p id="confirm-msg"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
