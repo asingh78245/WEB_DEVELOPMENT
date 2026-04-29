@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Manager</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f0f4f8; color: #333; }
+    nav { background: #2d6a4f; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: #fff; text-decoration: none; margin-left: 16px; font-weight: 500; }
+    nav .brand { font-size: 1.2rem; font-weight: 700; color: #fff; }
+    .container { max-width: 900px; margin: 30px auto; padding: 0 16px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+    th { background: #2d6a4f; color: #fff; padding: 12px; text-align: left; }
+    td { padding: 11px 12px; border-bottom: 1px solid #eee; }
+    tr:last-child td { border: none; }
+    .btn { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: .85rem; }
+    .btn-edit { background: #52b788; color: #fff; }
+    .btn-del  { background: #e63946; color: #fff; }
+    .btn-add  { background: #2d6a4f; color: #fff; display: inline-block; margin-bottom: 16px; padding: 9px 18px; border-radius: 5px; }
+    form label { display: block; margin: 12px 0 4px; font-weight: 500; }
+    form input { width: 100%; padding: 9px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+    form .submit { background: #2d6a4f; color: #fff; padding: 10px 24px; border: none; border-radius: 5px; cursor: pointer; margin-top: 16px; }
+    .card { background: #fff; padding: 28px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.1); max-width: 480px; }
+    .error { color: #e63946; margin-top: 8px; }
+    .search-bar { display: flex; gap: 8px; margin-bottom: 16px; }
+    .search-bar input { flex: 1; padding: 9px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+    .search-bar button { background: #2d6a4f; color: #fff; border: none; padding: 9px 18px; border-radius: 5px; cursor: pointer; }
+    h2 { margin-bottom: 20px; color: #2d6a4f; }
+    .empty { text-align: center; padding: 30px; color: #888; }
+  </style>
+</head>
+<body>
+<nav>
+  <span class="brand">📒 Contact Manager</span>
+  <div>
+    <a href="/">Home</a>
+    <a href="/add">+ Add Contact</a>
+  </div>
+</nav>
+<div class="container">
+  {% block content %}{% endblock %}
+</div>
+</body>
+</html>

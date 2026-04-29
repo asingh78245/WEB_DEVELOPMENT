@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Contacts</h2>
+
+<!-- Search -->
+<form class="search-bar" method="get">
+  <input name="q" value="{{ query }}" placeholder="Search by name or phone…">
+  <button type="submit">Search</button>
+  {% if query %}<a href="/" class="btn btn-edit">Clear</a>{% endif %}
+</form>
+
+<a href="/add" class="btn btn-add">+ Add Contact</a>
+
+{% if contacts %}
+<table>
+  <thead>
+    <tr><th>#</th><th>Name</th><th>Phone</th><th>Email</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    {% for cid, c in contacts.items() %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ c.name }}</td>
+      <td>{{ c.phone }}</td>
+      <td>{{ c.email }}</td>
+      <td>
+        <a href="/edit/{{ cid }}" class="btn btn-edit">Edit</a>
+        <a href="/delete/{{ cid }}" class="btn btn-del"
+           onclick="return confirm('Delete {{ c.name }}?')">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+  <p class="empty">No contacts found.</p>
+{% endif %}
+{% endblock %}
